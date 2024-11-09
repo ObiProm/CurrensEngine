@@ -1,7 +1,4 @@
 GameObject
-====
-
-example
 ===
 
 .. note::
