@@ -1,29 +1,29 @@
 GameObject
-===
+==========
 
 .. note::
 
    This project is under active development.
 
-..code-block:: C#
+.. code-block:: C#
 
    public GameObject GetObject(string path)
    {
-      string[] names = path.Split('/');
-      GameObject currentObject = this;
+       string[] names = path.Split('/');
+       GameObject currentObject = this;
 
-      foreach (string name in names)
-      {
-         if (name == "..")
-            currentObject = currentObject.Parent;
-         else
-            currentObject = currentObject.Children.FirstOrDefault(o => o.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+       foreach (string name in names)
+       {
+           if (name == "..")
+               currentObject = currentObject.Parent;
+           else
+               currentObject = currentObject.Children.FirstOrDefault(o => o.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
 
-         if (currentObject == null)
-            throw new ArgumentException($"Object with the name '{name}' not found.");
-      }
+           if (currentObject == null)
+               throw new ArgumentException($"Object with the name '{name}' not found.");
+       }
 
-      return currentObject;
+       return currentObject;
    }
 
 ABOBA
