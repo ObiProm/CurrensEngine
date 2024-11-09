@@ -3,9 +3,7 @@ GameObject Class
 
 The `GameObject` class represents an entity in a scene graph, allowing for hierarchical organization of game objects. It provides methods for managing child objects, retrieving objects by path, and interacting with the Windows API for window management.
 
-Namespace
----------
-CurrensEngine
+**Namespace:** CurrensEngine
 
 Public Attributes
 -----------------
@@ -32,7 +30,13 @@ Public Methods
 
 Usage Example
 -------------
-```csharp
-GameObject myObject = new GameObject("MyObject");
-myObject.AddChild(new GameObject("ChildObject"));
-GameObject foundObject = myObject.GetObject("ChildObject");
+.. code-block:: csharp
+
+   GameObject myObject = new GameObject("MyObject");
+   myObject.AddChild(new GameObject("ChildObject"));
+   GameObject foundObject = myObject.GetObject("ChildObject");
+
+Exceptions
+----------
+- **ArgumentException**: Thrown when the specified GameObject cannot be found.
+- **InvalidCastException**: Thrown when the found GameObject cannot be cast to the specified type.
